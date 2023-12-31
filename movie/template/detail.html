@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid m-5">
+    <div class="row">
+        <div class="col">
+            <img src="{{movie.cover.url}}" class="card-img-top" height="400px">
+            <h3 class="card-title mt-2">Name :{{movie.title}}</h3>
+            <h4 class="card-text">ID :{{movie.id}}</h4>
+            <h4 class="card-text">Year :{{movie.year}}</h4>
+            <h4 class="card-text">About :{{movie.about}}</h4>
+        </div>
+        <div class="col mx-2">
+            <a class="btn btn-success" href="{% url 'app1:update' movie.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'app1:delete' movie.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
